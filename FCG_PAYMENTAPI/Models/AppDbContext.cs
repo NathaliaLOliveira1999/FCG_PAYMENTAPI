@@ -6,12 +6,12 @@ namespace FCG_PAYMENTAPI.Models
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        //public DbSet<Game> Games { get; set; }
+        public DbSet<Sales> Sales { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Game>().HasKey(g => g.IdGames);
+            modelBuilder.Entity<Sales>().HasKey(s => s.IdSales);
 
             base.OnModelCreating(modelBuilder);
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FCG_PAYMENTAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f05bb3d06036773dfce793c08b3b80c1014cc26")]
 [assembly: System.Reflection.AssemblyProductAttribute("FCG_PAYMENTAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FCG_PAYMENTAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

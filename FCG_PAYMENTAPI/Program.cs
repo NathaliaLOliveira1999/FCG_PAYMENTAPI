@@ -1,4 +1,8 @@
+using FCG_PAYMENTAPI.Interfaces.Repositories;
+using FCG_PAYMENTAPI.Interfaces.Services;
 using FCG_PAYMENTAPI.Models;
+using FCG_PAYMENTAPI.Repositories;
+using FCG_PAYMENTAPI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -39,10 +43,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Register repositories
-//builder.Services.AddScoped<IGameRepository, GameRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 
 // Register application services (Scoped is appropriate when using DbContext)
-//builder.Services.AddScoped<IGameService, GameService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 
 builder.Services.AddAutoMapper(cfg => { /* configuration */ }, AppDomain.CurrentDomain.GetAssemblies());
 
