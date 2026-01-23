@@ -17,13 +17,16 @@ namespace FCG_PAYMENTAPI.Models
         [Column("TOTALPRICE")]
         public decimal TotalPrice { get; set; }
 
-        [Column("PAYMENTMETHOD")]
-        public string PaymentMethod { get; set; }
-
         [Column("IDCLIENT")]
         public int IdClient { get; set; }
 
         [Column("IDPAYMENTSTATUS")]
-        public PaymentStatus IdPaymentStatus { get; set; }
+        public int IdPaymentStatus { get; set; }
+
+        [Column("PAYMENTDATE")]
+        public DateTime? PaymentDate { get; set; }
+
+        [Column("IDPAYMENTMETHOD")]
+        public int IdPaymentMethod { get; set; }
     }
 }

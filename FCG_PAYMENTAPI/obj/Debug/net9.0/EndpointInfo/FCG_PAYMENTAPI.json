@@ -5,6 +5,37 @@
     "version": "v1"
   },
   "paths": {
+    "/Payment/ExecutePayment": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Payment/GetPaymentStatus": {
       "get": {
         "tags": [
@@ -95,6 +126,60 @@
     }
   },
   "components": {
+    "schemas": {
+      "PaymentDto": {
+        "type": "object",
+        "properties": {
+          "idSales": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idPaymentMethod": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "cardCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardHolderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationMonth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "expirationYear": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pixKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "pixTransactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "securitySchemes": {
       "Bearer": {
         "type": "http",

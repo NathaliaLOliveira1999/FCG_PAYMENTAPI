@@ -4,44 +4,60 @@ using FCG_PAYMENTAPI.Models;
 using FCG_PAYMENTAPI.Repositories;
 using FCG_PAYMENTAPI.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-// Register Swagger with JWT Bearer support
+// Swagger + JWT
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "FCGProj API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "FCGProj API",
+        Version = "v1"
+    });
 
     var bearerScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Description = "Enter 'Bearer {token}' (without quotes). Example: \"Bearer eyJhbGci...\"",
+        Description = "Enter 'Bearer {token}'",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.Http,
         Scheme = "bearer",
         BearerFormat = "JWT",
-        Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "Bearer"
+        }
     };
 
     c.AddSecurityDefinition("Bearer", bearerScheme);
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
-        { bearerScheme, new string[] { } }
+        { bearerScheme, Array.Empty<string>() }
     });
 });
 
-// Register EF Core DbContext using the connection string named "DefaultConnection"
+// DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        sql => sql.EnableRetryOnFailure(
+            maxRetryCount: 10,
+            maxRetryDelay: TimeSpan.FromSeconds(10),
+            errorNumbersToAdd: null
+        )
+    )
+);
 // Register repositories
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 
@@ -66,21 +82,22 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-// If you want Swagger in non-development, move the two lines above outside the IsDevelopment block.
+// Pipeline
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Migrations
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
 
 app.Run();

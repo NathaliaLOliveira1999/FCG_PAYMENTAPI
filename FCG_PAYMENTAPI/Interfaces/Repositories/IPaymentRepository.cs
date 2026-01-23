@@ -5,7 +5,8 @@ namespace FCG_PAYMENTAPI.Interfaces.Repositories
 {
     public interface IPaymentRepository
     {
-        ServiceResult UpdatePayment(int idSales, PaymentStatus status);
-        PaymentStatus GetPaymentStatus(int idSales);
+        ServiceResult UpdatePayment(int idSales, PaymentStatus status, PaymentMethod method);
+        ServiceResult UpdatePaymentStatus(int idSales, PaymentStatus status);
+        int GetPaymentStatus(int idSales);
     }
 }

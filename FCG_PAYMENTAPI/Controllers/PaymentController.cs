@@ -1,3 +1,4 @@
+using FCG_CATALOGAPI.DTO;
 using FCG_PAYMENTAPI.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,16 @@ namespace FCG_PAYMENTAPI.Controllers
             _logger = logger;
             _paymentService = paymentService;
         }
+
+        [Authorize]
+        [HttpPost("ExecutePayment")]
+        public IActionResult ExecutePayment(SalesDto payment)
+        {
+            if (payment == null)
+                return BadRequest("Preencha os dados da venda!");
+            return Ok(_paymentService.ExecutePayment(payment));
+        }
+
 
         [Authorize]
         [HttpGet("GetPaymentStatus")]

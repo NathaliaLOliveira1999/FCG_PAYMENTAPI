@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "FCG_PAYMENTAPI.Controllers.PaymentController",
+    "Method": "ExecutePayment",
+    "RelativePath": "Payment/ExecutePayment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payment",
+        "Type": "FCG_CATALOGAPI.DTO.PaymentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FCG_PAYMENTAPI.Controllers.PaymentController",
     "Method": "GetPaymentStatus",
     "RelativePath": "Payment/GetPaymentStatus",
     "HttpMethod": "GET",
