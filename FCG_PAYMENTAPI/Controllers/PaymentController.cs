@@ -18,14 +18,14 @@ namespace FCG_PAYMENTAPI.Controllers
             _paymentService = paymentService;
         }
 
-        [Authorize]
-        [HttpPost("ExecutePayment")]
-        public IActionResult ExecutePayment(SalesDto payment)
-        {
-            if (payment == null)
-                return BadRequest("Preencha os dados da venda!");
-            return Ok(_paymentService.ExecutePayment(payment));
-        }
+        //[Authorize]
+        //[HttpPost("ExecutePayment")]
+        //public IActionResult ExecutePayment(SalesDto payment)
+        //{
+        //    if (payment == null)
+        //        return BadRequest("Preencha os dados da venda!");
+        //    return Ok(_paymentService.ExecutePayment(payment));
+        //}
 
 
         [Authorize]

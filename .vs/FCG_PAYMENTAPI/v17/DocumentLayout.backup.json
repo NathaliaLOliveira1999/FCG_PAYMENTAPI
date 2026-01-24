@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\FIAP PROJ\\FCG_PAYMENTAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D20DE542-7CF6-4A0B-9CB5-FD9060FC5233}|FCG_PAYMENTAPI\\FCG_PAYMENTAPI.csproj|c:\\fiap proj\\fcg_paymentapi\\fcg_paymentapi\\repositories\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D20DE542-7CF6-4A0B-9CB5-FD9060FC5233}|FCG_PAYMENTAPI\\FCG_PAYMENTAPI.csproj|solutionrelative:fcg_paymentapi\\repositories\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D20DE542-7CF6-4A0B-9CB5-FD9060FC5233}|FCG_PAYMENTAPI\\FCG_PAYMENTAPI.csproj|c:\\fiap proj\\fcg_paymentapi\\fcg_paymentapi\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D20DE542-7CF6-4A0B-9CB5-FD9060FC5233}|FCG_PAYMENTAPI\\FCG_PAYMENTAPI.csproj|solutionrelative:fcg_paymentapi\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D20DE542-7CF6-4A0B-9CB5-FD9060FC5233}|FCG_PAYMENTAPI\\FCG_PAYMENTAPI.csproj|c:\\fiap proj\\fcg_paymentapi\\fcg_paymentapi\\repositories\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D20DE542-7CF6-4A0B-9CB5-FD9060FC5233}|FCG_PAYMENTAPI\\FCG_PAYMENTAPI.csproj|solutionrelative:fcg_paymentapi\\repositories\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D20DE542-7CF6-4A0B-9CB5-FD9060FC5233}|FCG_PAYMENTAPI\\FCG_PAYMENTAPI.csproj|c:\\fiap proj\\fcg_paymentapi\\fcg_paymentapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -58,26 +58,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PaymentRepository.cs",
               "DocumentMoniker": "C:\\FIAP PROJ\\FCG_PAYMENTAPI\\FCG_PAYMENTAPI\\Repositories\\PaymentRepository.cs",
               "RelativeDocumentMoniker": "FCG_PAYMENTAPI\\Repositories\\PaymentRepository.cs",
               "ToolTip": "C:\\FIAP PROJ\\FCG_PAYMENTAPI\\FCG_PAYMENTAPI\\Repositories\\PaymentRepository.cs",
               "RelativeToolTip": "FCG_PAYMENTAPI\\Repositories\\PaymentRepository.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAhwDwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAArwBIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T00:59:05.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-19T00:59:05.315Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\FIAP PROJ\\FCG_PAYMENTAPI\\FCG_PAYMENTAPI\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "FCG_PAYMENTAPI\\Controllers\\PaymentController.cs",
               "ToolTip": "C:\\FIAP PROJ\\FCG_PAYMENTAPI\\FCG_PAYMENTAPI\\Controllers\\PaymentController.cs",
               "RelativeToolTip": "FCG_PAYMENTAPI\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAApwCEAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAMwEIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T00:27:15.889Z",
               "EditorCaption": ""
