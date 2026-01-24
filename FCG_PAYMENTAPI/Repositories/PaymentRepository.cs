@@ -60,7 +60,9 @@ namespace FCG_PAYMENTAPI.Repositories
         public int GetPaymentStatus(int idSales)
         {
             var sale = _context.Sales.Where(x => x.IdSales == idSales).FirstOrDefault();
-            return sale.IdPaymentStatus;
+            if (sale != null)
+                return sale.IdPaymentStatus;
+            return 0;
         }
     }
 }

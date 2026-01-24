@@ -45,7 +45,7 @@ namespace FCG_PAYMENTAPI.Controllers
                 return BadRequest("Preencha os dados da venda!");
             var retorno = _paymentService.ConfirmPayment(idSales);
             if (retorno.Success)
-                return Ok();
+                return Ok("Pagamento realizado!");
             else return BadRequest(retorno.Error);
         }
 
@@ -57,7 +57,7 @@ namespace FCG_PAYMENTAPI.Controllers
                 return BadRequest("Preencha os dados da venda!");
             var retorno = _paymentService.CancelPayment(idSales);
             if (retorno.Success)
-                return Ok();
+                return Ok("Compra cancelada!");
             else return BadRequest(retorno.Error);
         }
 
@@ -69,7 +69,7 @@ namespace FCG_PAYMENTAPI.Controllers
                 return BadRequest("Preencha os dados da venda!");
             var retorno = _paymentService.RefundPayment(idSales);
             if (retorno.Success)
-                return Ok();
+                return Ok("Reembolso realizado");
             else return BadRequest(retorno.Error);
         }
     }

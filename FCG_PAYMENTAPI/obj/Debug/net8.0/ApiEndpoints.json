@@ -1,0 +1,82 @@
+[
+  {
+    "ContainingType": "FCG_PAYMENTAPI.Controllers.PaymentController",
+    "Method": "CancelPayment",
+    "RelativePath": "Payment/CancelPayment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idSales",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FCG_PAYMENTAPI.Controllers.PaymentController",
+    "Method": "ConfirmPayment",
+    "RelativePath": "Payment/ConfirmPayment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idSales",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FCG_PAYMENTAPI.Controllers.PaymentController",
+    "Method": "ExecutePayment",
+    "RelativePath": "Payment/ExecutePayment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "payment",
+        "Type": "FCG_CATALOGAPI.DTO.SalesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FCG_PAYMENTAPI.Controllers.PaymentController",
+    "Method": "GetPaymentStatus",
+    "RelativePath": "Payment/GetPaymentStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idSales",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FCG_PAYMENTAPI.Controllers.PaymentController",
+    "Method": "RefundPayment",
+    "RelativePath": "Payment/RefundPayment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idSales",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
