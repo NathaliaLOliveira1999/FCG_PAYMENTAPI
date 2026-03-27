@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FCG_PAYMENTAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class PaymentController : ControllerBase
@@ -28,7 +29,6 @@ namespace FCG_PAYMENTAPI.Controllers
         //}
 
 
-        [Authorize]
         [HttpGet("GetPaymentStatus")]
         public IActionResult GetPaymentStatus(int idSales)
         {
@@ -37,7 +37,6 @@ namespace FCG_PAYMENTAPI.Controllers
             return Ok(_paymentService.GetPaymentStatus(idSales));
         }
 
-        [Authorize]
         [HttpPost("ConfirmPayment")]
         public IActionResult ConfirmPayment(int idSales)
         {
@@ -49,7 +48,6 @@ namespace FCG_PAYMENTAPI.Controllers
             else return BadRequest(retorno.Error);
         }
 
-        [Authorize]
         [HttpPost("CancelPayment")]
         public IActionResult CancelPayment(int idSales)
         {
@@ -61,7 +59,6 @@ namespace FCG_PAYMENTAPI.Controllers
             else return BadRequest(retorno.Error);
         }
 
-        [Authorize]
         [HttpPost("RefundPayment")]
         public IActionResult RefundPayment(int idSales)
         {

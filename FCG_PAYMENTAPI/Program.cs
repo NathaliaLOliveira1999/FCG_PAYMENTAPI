@@ -4,7 +4,6 @@ using FCG_PAYMENTAPI.Models;
 using FCG_PAYMENTAPI.Repositories;
 using FCG_PAYMENTAPI.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
